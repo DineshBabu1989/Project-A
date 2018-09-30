@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import AllPages from "./pages";
+import AllPages from "./pages_Reducer";
+import Progress from "./progress_Reducer";
 
 const rootReducer = combineReducers({
-  allpages: AllPages
+  allpages: AllPages,
+  progress: Progress
 });
 
 export default rootReducer;

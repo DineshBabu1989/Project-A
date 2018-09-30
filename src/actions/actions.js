@@ -1,4 +1,5 @@
 export const ALL_PAGES = "ALL_PAGES";
+export const INC_PROGESS = "INC_PROGESS";
 
 /*Page details*/
 export const all_pages = () => {
@@ -38,21 +39,10 @@ export const all_pages = () => {
   };
 };
 
-/*
-export const CURRENT_PAGE = "CURRENT_PAGE";
-export const INITIAL_RENDER = "INITIAL_RENDER";
-
-export const initialRender = () => {
+/*Increment progess */
+export const inc_progress = () => {
   return {
-    type: INITIAL_RENDER,
-    payload: "loading"
+    type: INC_PROGESS,
+    payload: "increment"
   };
 };
-
-export const current_page = data => {
-  return {
-    type: CURRENT_PAGE,
-    payload: data
-  };
-};
-*/
