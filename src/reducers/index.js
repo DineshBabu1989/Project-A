@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
+import AllPages from "./pages";
 
 const rootReducer = combineReducers({
-  test: "hi can you see me"
+  allpages: AllPages
 });
 
 export default rootReducer;
