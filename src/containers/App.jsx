@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { all_pages, inc_progress } from "../actions/actions";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   /*Get pages on app load*/
@@ -16,23 +17,30 @@ class App extends Component {
   render() {
     let pages = this.props.pages;
     let progress = this.props.progress;
-    let component;
 
-    if (pages.length === 0) {
-      component = <div>Loading...</div>;
-    } else if (pages.length > 0 && progress < pages.length) {
-      component = <div>component</div>;
-    } else if (pages.length > 0 && progress === pages.length) {
-      component = <div>submit form</div>;
-    }
+    const component = props => {
+      if (pages.length === 0) {
+        return <div>Loading...</div>;
+      } else if (pages.length > 0 && progress <= pages.length) {
+        let page = pages.find(page => {
+          if (page.id == props.match.params.progress) {
+            return page;
+          }
+        });
 
+        return <div>{page.question}</div>;
+      } else if (pages.length > 0 && progress > pages.length) {
+        return <div>submit form</div>;
+      }
+    };
     return (
-      <div>
-        {this.props.pages.length}
-        {this.props.progress}
-        {component}
-        <button onClick={this.handleClick}>click</button>
-      </div>
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route exact path="/page/:progress" component={component} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }
