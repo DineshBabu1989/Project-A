@@ -1,5 +1,9 @@
 export const ALL_PAGES = "ALL_PAGES";
+export const INITIAL_RENDER = "INITIAL_RENDER";
 export const INC_PROGESS = "INC_PROGESS";
+export const DEC_PROGESS = "DEC_PROGESS";
+export const CURRENT_PAGE = "CURRENT_PAGE";
+export const UPDATE_PAGE = "UPDATE_PAGE";
 
 /*Page details*/
 export const all_pages = () => {
@@ -9,7 +13,7 @@ export const all_pages = () => {
       question: "How old are you ?",
       answer: "",
       type: "textField",
-      completed: false
+      disabled: true
     },
     {
       id: 2,
@@ -22,7 +26,7 @@ export const all_pages = () => {
         "full stack engineer",
         "Dev ops specialist"
       ],
-      completed: false
+      disabled: true
     },
     {
       id: 3,
@@ -30,7 +34,7 @@ export const all_pages = () => {
       answer: "",
       type: "radioButton",
       options: ["male", "female"],
-      completed: false
+      disabled: true
     }
   ];
   return {
@@ -44,5 +48,37 @@ export const inc_progress = () => {
   return {
     type: INC_PROGESS,
     payload: "increment"
+  };
+};
+
+/*Decrement progess */
+export const dec_progress = () => {
+  return {
+    type: DEC_PROGESS,
+    payload: "decrement"
+  };
+};
+
+/*Initial render*/
+export const initial_render = () => {
+  return {
+    type: INITIAL_RENDER,
+    payload: "loading"
+  };
+};
+
+/*Current page*/
+export const current_page = data => {
+  return {
+    type: CURRENT_PAGE,
+    payload: data
+  };
+};
+
+/*Update pages based on current page*/
+export const update_pages = data => {
+  return {
+    type: UPDATE_PAGE,
+    payload: data
   };
 };

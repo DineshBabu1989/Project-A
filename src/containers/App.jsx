@@ -1,43 +1,25 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { all_pages, inc_progress } from "../actions/actions";
+import { all_pages, initial_render } from "../actions/actions";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Page from "./Page";
+import Summary from "../components/summaryPage";
 
 class App extends Component {
   /*Get pages on app load*/
 
   componentDidMount() {
     this.props.all_pages();
+    this.props.initial_render();
   }
 
-  handleClick = () => {
-    this.props.inc_progress();
-  };
-
   render() {
-    let pages = this.props.pages;
-    let progress = this.props.progress;
-
-    const component = props => {
-      if (pages.length === 0) {
-        return <div>Loading...</div>;
-      } else if (pages.length > 0 && progress <= pages.length) {
-        let page = pages.find(page => {
-          if (page.id == props.match.params.progress) {
-            return page;
-          }
-        });
-
-        return <div>{page.question}</div>;
-      } else if (pages.length > 0 && progress > pages.length) {
-        return <div>submit form</div>;
-      }
-    };
     return (
       <BrowserRouter>
         <div>
           <Switch>
-            <Route exact path="/page/:progress" component={component} />
+            <Route exact path="/page/summary" component={Summary} />
+            <Route exact path="/page/:progress" component={Page} />
           </Switch>
         </div>
       </BrowserRouter>
@@ -45,15 +27,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  pages: state.allpages,
-  progress: state.progress
-});
-
 export default connect(
-  mapStateToProps,
+  null,
   {
     all_pages,
-    inc_progress
+    initial_render
   }
 )(App);
