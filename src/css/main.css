@@ -49,3 +49,75 @@ a:hover {
   border: none;
   -webkit-box-shadow: 2px 2px 7px -1px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 2px 7px -1px rgba(0, 0, 0, 0.75); }
+
+.input__button {
+  width: 25%;
+  height: 5rem;
+  background-color: dodgerblue;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 100;
+  border-radius: 1rem;
+  margin: 1rem;
+  outline: none;
+  border-style: none; }
+
+.progress {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5% 10%; }
+  .progress__value {
+    text-align: center; }
+  .progress__bar {
+    width: 100%;
+    background-color: grey;
+    border-radius: 1rem; }
+  .progress__indicator {
+    width: 50%;
+    height: 30px;
+    background-color: dodgerblue;
+    border-radius: 1rem; }
+
+.input {
+  padding: 0% 10%;
+  color: #333; }
+  .input__holder {
+    background-color: #fff;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: -1px 1px 8px -2px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 0; }
+  .input__title {
+    font-weight: 300;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee; }
+  .input__field--text {
+    width: 80%;
+    height: 4rem;
+    font-size: 3rem;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: #fff;
+    border-style: none;
+    border: 1px solid dodgerblue;
+    margin-bottom: 2rem; }
+  .input__field--select {
+    width: 80%;
+    height: 4rem;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: #fff;
+    border-style: none;
+    border: 1px solid dodgerblue;
+    margin-bottom: 2rem; }
+  .input__field--list {
+    list-style: none;
+    font-size: 3rem;
+    margin-bottom: 2rem; }
+  .input__field--radio {
+    width: 3rem;
+    position: relative;
+    margin-bottom: 2rem; }

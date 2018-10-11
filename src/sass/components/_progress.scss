@@ -1,0 +1,19 @@
+.progress {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5% 10%;
+  &__value {
+    text-align: center;
+  }
+  &__bar {
+    width: 100%;
+    background-color: grey;
+    border-radius: 1rem;
+  }
+  &__indicator {
+    width: 50%;
+    height: 30px;
+    background-color: dodgerblue;
+    border-radius: 1rem;
+  }
+}

@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { all_pages, initial_render } from "../actions/actions";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Page from "./Page";
-import Summary from "../components/summaryPage";
 
 class App extends Component {
   /*Get pages on app load*/
@@ -18,7 +17,6 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Switch>
-            <Route exact path="/page/summary" component={Summary} />
             <Route exact path="/page/:progress" component={Page} />
           </Switch>
         </div>
@@ -26,9 +24,11 @@ class App extends Component {
     );
   }
 }
-
+const mapStateToProps = state => ({
+  pages: state.allpages
+});
 export default connect(
-  null,
+  mapStateToProps,
   {
     all_pages,
     initial_render

@@ -12,6 +12,7 @@ import TextField from "../components/textField";
 import SelectionField from "../components/selectionField";
 import RadioField from "../components/radioField";
 import ProgressBar from "../components/progress";
+import Summary from "../components/summaryPage";
 
 class Page extends Component {
   handleChange = data => {
@@ -24,12 +25,21 @@ class Page extends Component {
   };
 
   handleNext = url => {
+    const resetData = {
+      id: "",
+      question: "",
+      answer: "",
+      disabled: true
+    };
     this.props.inc_progress();
-    console.log(url);
+    this.props.update_pages(this.props.currentPage);
+    this.props.current_page(resetData);
     this.props.history.push(`/page/${url}`);
   };
 
-  handleUpdate = () => {};
+  handleSubmit = () => {
+    console.log(this.props.pages);
+  };
 
   render() {
     let pages = this.props.pages;
@@ -40,14 +50,14 @@ class Page extends Component {
     /*Decide on page rendering*/
     if (pages.length === 0) {
       page = <div>Loading...</div>;
-    } else if (pages.length > 0 && progress <= pages.length) {
+    } else if (pages.length > 0 && progress <= pages.length + 1) {
       /*Select current page from pages array*/
       const pagedata = pages.find(page => {
         if (page.id == this.props.match.params.progress) {
           return page;
         }
       });
-
+      console.log(pagedata);
       /*Finding index to identify the first page*/
       const pageIndex = pages.findIndex(page => {
         return page.id == this.props.match.params.progress;
@@ -64,11 +74,12 @@ class Page extends Component {
             disabled={currentPage.disabled}
             handleBack={this.handleBack}
             handleNext={this.handleNext}
+            term={currentPage.answer}
           />
         );
       } else if (pagedata.type === "selectOption") {
         page = (
-          <TextField
+          <SelectionField
             handleChange={this.handleChange}
             data={pagedata}
             length={pages.length}
@@ -76,11 +87,12 @@ class Page extends Component {
             disabled={currentPage.disabled}
             handleBack={this.handleBack}
             handleNext={this.handleNext}
+            term={currentPage.answer}
           />
         );
       } else if (pagedata.type === "radioButton") {
         page = (
-          <TextField
+          <RadioField
             handleChange={this.handleChange}
             data={pagedata}
             length={pages.length}
@@ -88,15 +100,23 @@ class Page extends Component {
             disabled={currentPage.disabled}
             handleBack={this.handleBack}
             handleNext={this.handleNext}
+            term={currentPage.answer}
+          />
+        );
+      } else if (pagedata.type === "submitPage") {
+        page = (
+          <Summary
+            data={pages}
+            handleBack={this.handleBack}
+            handleNext={this.handleNext}
+            handleSubmit={this.handleSubmit}
           />
         );
       }
-    } else if (pages.length > progress) {
-      return <div>Submit Form</div>;
     }
     return (
       <div>
-        <ProgressBar count={progress} />
+        <ProgressBar count={progress} length={pages.length} />
         {page}
       </div>
     );

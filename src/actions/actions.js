@@ -12,8 +12,7 @@ export const all_pages = () => {
       id: 1,
       question: "How old are you ?",
       answer: "",
-      type: "textField",
-      disabled: true
+      type: "textField"
     },
     {
       id: 2,
@@ -25,16 +24,24 @@ export const all_pages = () => {
         "back-end developer",
         "full stack engineer",
         "Dev ops specialist"
-      ],
-      disabled: true
+      ]
     },
     {
       id: 3,
       question: "Can you please tell your gender",
       answer: "",
       type: "radioButton",
-      options: ["male", "female"],
-      disabled: true
+      options: ["male", "female"]
+    },
+    {
+      id: 4,
+      question: "What is your first name",
+      answer: "",
+      type: "textField"
+    },
+    {
+      id: 5,
+      type: "submitPage"
     }
   ];
   return {

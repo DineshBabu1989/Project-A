@@ -1,0 +1,52 @@
+.input {
+  padding: 0% 10%;
+  color: #333;
+  &__holder {
+    background-color: #fff;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: -1px 1px 8px -2px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 0;
+  }
+  &__title {
+    font-weight: 300;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+  }
+  &__field--text {
+    width: 80%;
+    height: 4rem;
+    font-size: 3rem;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: #fff;
+    border-style: none;
+    border: 1px solid dodgerblue;
+    margin-bottom: 2rem;
+  }
+  &__field--select {
+    width: 80%;
+    height: 4rem;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: #fff;
+    border-style: none;
+    border: 1px solid dodgerblue;
+    margin-bottom: 2rem;
+  }
+  &__field--list {
+    list-style: none;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  &__field--radio {
+    width: 3rem;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+}
+input[type="radio"] {
+}

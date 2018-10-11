@@ -26,9 +26,17 @@ const TextField = props => {
   if (props.pageIndex !== 0) {
     buttons = (
       <div>
-        <button onClick={props.handleBack}>Back</button>
-
-        <button disabled={props.disabled} onClick={handleNext}>
+        <button
+          className="input__button input__button--back"
+          onClick={props.handleBack}
+        >
+          Back
+        </button>
+        <button
+          className="input__button input__button--next"
+          disabled={props.disabled}
+          onClick={handleNext}
+        >
           Next
         </button>
       </div>
@@ -36,7 +44,11 @@ const TextField = props => {
   } else {
     buttons = (
       <div>
-        <button disabled={props.disabled} onClick={handleNext}>
+        <button
+          className="input__button input__button--next"
+          disabled={props.disabled}
+          onClick={handleNext}
+        >
           Next
         </button>
       </div>
@@ -45,9 +57,18 @@ const TextField = props => {
 
   return (
     <Fragment>
-      <h1>{props.data.question}</h1>
-      <input type="text" onChange={handleChange} />
-      {buttons}
+      <section className="input">
+        <div className="input__holder">
+          <h1 className="input__title">{props.data.question}</h1>
+          <input
+            className="input__field--text"
+            type="text"
+            onChange={handleChange}
+            value={props.term}
+          />
+          {buttons}
+        </div>
+      </section>
     </Fragment>
   );
 };
