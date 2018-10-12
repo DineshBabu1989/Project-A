@@ -51,14 +51,14 @@ a:hover {
   box-shadow: 2px 2px 7px -1px rgba(0, 0, 0, 0.75); }
 
 .input__button {
-  width: 25%;
+  width: 15rem;
   height: 5rem;
-  background-color: dodgerblue;
+  background-color: #0366d6;
   color: #fff;
   font-size: 3rem;
   font-weight: 100;
   border-radius: 1rem;
-  margin: 1rem;
+  margin: 3rem;
   outline: none;
   border-style: none; }
 
@@ -70,17 +70,17 @@ a:hover {
     text-align: center; }
   .progress__bar {
     width: 100%;
-    background-color: grey;
+    background-color: #24292e;
     border-radius: 1rem; }
   .progress__indicator {
     width: 50%;
     height: 30px;
-    background-color: dodgerblue;
+    background-color: #0366d6;
     border-radius: 1rem; }
 
 .input {
   padding: 0% 10%;
-  color: #333; }
+  color: #000; }
   .input__holder {
     background-color: #fff;
     width: 100%;
@@ -101,8 +101,7 @@ a:hover {
     border-radius: 1rem;
     background-color: #fff;
     border-style: none;
-    border: 1px solid dodgerblue;
-    margin-bottom: 2rem; }
+    border: 1px solid #0366d6; }
   .input__field--select {
     width: 80%;
     height: 4rem;
@@ -111,13 +110,55 @@ a:hover {
     border-radius: 1rem;
     background-color: #fff;
     border-style: none;
-    border: 1px solid dodgerblue;
-    margin-bottom: 2rem; }
+    border: 1px solid #0366d6; }
   .input__field--list {
     list-style: none;
     font-size: 3rem;
-    margin-bottom: 2rem; }
-  .input__field--radio {
-    width: 3rem;
+    text-align: center; }
+  .input__field-radio--holder {
     position: relative;
-    margin-bottom: 2rem; }
+    text-align: left;
+    width: 20%;
+    margin: 0 auto; }
+  .input__field--label {
+    margin-left: 5rem; }
+
+input[type="radio"] {
+  display: none; }
+
+.radio {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 3rem; }
+  .radio__unchecked {
+    background-color: #fff;
+    border: 4px solid #0366d6; }
+  .radio__checked {
+    background-color: #24292e;
+    border: 4px solid #0366d6; }
+
+.summary {
+  width: 80%;
+  background-color: #fff;
+  box-shadow: -1px 1px 8px -2px rgba(0, 0, 0, 0.75);
+  border-radius: 1rem;
+  margin: 0 auto 5rem auto;
+  text-align: center; }
+  .summary__heading {
+    font-size: 4rem;
+    font-weight: 500;
+    border-bottom: 1px solid #eee; }
+  .summary__list-item {
+    border-bottom: 1px solid #eee;
+    list-style: none;
+    padding: 1rem; }
+  .summary__list-item--ques {
+    font-size: 3rem;
+    font-weight: 100; }
+  .summary__list-item--ans {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #0366d6; }

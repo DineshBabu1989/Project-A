@@ -19,21 +19,32 @@ const radioField = props => {
     }
   };
 
+  const renderCheckbutton = option => {
+    if (props.term === option) {
+      return <div class="radio radio__checked" />;
+    } else {
+      return <div class="radio radio__unchecked" />;
+    }
+  };
+
   const makeList = () => {
     return props.data.options.map((option, i) => {
       return (
         <li key={i} className="input__field--list">
-          <label for={option}>
-            <input
-              type="radio"
-              id={option}
-              className="input__field--radio"
-              value={option}
-              checked={props.term === option}
-              onChange={handleChange}
-            />
-            {option}
-          </label>
+          <div className="input__field-radio--holder">
+            {renderCheckbutton(option)}
+            <label for={option} className="input__field--label">
+              <input
+                type="radio"
+                id={option}
+                className="input__field--radio"
+                value={option}
+                checked={props.term === option}
+                onChange={handleChange}
+              />
+              {option}
+            </label>
+          </div>
         </li>
       );
     });

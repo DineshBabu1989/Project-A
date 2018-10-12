@@ -13,14 +13,14 @@
   }
 }
 .input__button {
-  width: 25%;
+  width: 15rem;
   height: 5rem;
-  background-color: dodgerblue;
-  color: #fff;
+  background-color: $color-primary-light;
+  color: $color-white;
   font-size: 3rem;
   font-weight: 100;
   border-radius: 1rem;
-  margin: 1rem;
+  margin: 3rem;
   outline: none;
   border-style: none;
 }
