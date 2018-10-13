@@ -92,7 +92,8 @@ a:hover {
 
 .input {
   padding: 0% 10%;
-  color: #000; }
+  color: #000;
+  margin: 0 auto 5rem auto; }
   .input__holder {
     background-color: #fff;
     width: 100%;
@@ -125,6 +126,8 @@ a:hover {
     background-color: #fff;
     border-style: none;
     border: 1px solid #0366d6; }
+  .input__field--select:focus {
+    outline: none; }
   .input__field--list {
     list-style: none;
     font-size: 3rem;

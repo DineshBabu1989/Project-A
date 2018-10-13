@@ -31,7 +31,7 @@ export const all_pages = () => {
       question: "Can you please tell your gender",
       answer: "",
       type: "radioButton",
-      options: ["male", "female", "undetermined"]
+      options: ["male", "female", "unknown"]
     },
     {
       id: 4,
@@ -41,6 +41,19 @@ export const all_pages = () => {
     },
     {
       id: 5,
+      question: "What is your last name",
+      answer: "",
+      type: "textField"
+    },
+    {
+      id: 6,
+      question: "How you prefer to work ",
+      answer: "",
+      type: "radioButton",
+      options: ["Remote", "Full time", "freelancing"]
+    },
+    {
+      id: 7,
       type: "submitPage"
     }
   ];

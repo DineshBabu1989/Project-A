@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 const ProgressBar = props => {
   const styles = {
     progress: {
-      width: `${(props.count / props.length) * 100}%`
+      width: `${parseInt((props.count / props.length) * 100)}%`
     }
   };
   return (
