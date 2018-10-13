@@ -26,6 +26,10 @@
     border-style: none;
     border: 1px solid $color-primary-light;
   }
+  //reseting text field input focus
+  &__field--text:focus {
+    outline: none;
+  }
   //options selector styling
   &__field--select {
     width: 80%;
@@ -94,6 +98,9 @@ input[type="radio"] {
     }
     &__field--label {
       margin: 0;
+    }
+    &__field--text {
+      font-size: 2rem;
     }
   }
   .radio {

@@ -76,9 +76,11 @@ a:hover {
     background-color: #0366d6;
     border-radius: 1rem; }
   .progress__value {
-    width: 5rem;
-    height: 5rem;
-    padding: 1rem;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 2rem;
     border-radius: 50px;
     background-color: #fff;
@@ -112,6 +114,8 @@ a:hover {
     background-color: #fff;
     border-style: none;
     border: 1px solid #0366d6; }
+  .input__field--text:focus {
+    outline: none; }
   .input__field--select {
     width: 80%;
     height: 4rem;
@@ -163,6 +167,8 @@ input[type="radio"] {
     width: 10%; }
   .input__field--label {
     margin: 0; }
+  .input__field--text {
+    font-size: 2rem; }
   .radio {
     width: 2rem;
     height: 2rem;

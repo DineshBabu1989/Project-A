@@ -17,9 +17,11 @@
     border-radius: 1rem;
   }
   &__value {
-    width: 5rem;
-    height: 5rem;
-    padding: 1rem;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 2rem;
     border-radius: 50px;
     background-color: $color-white;
