@@ -16,11 +16,14 @@ const Summary = props => {
       <section class="summary">
         <h2 class="summary__heading">Summary of answers</h2>
         <ul>{list}</ul>
-        <button className="input__button" onClick={props.handleBack}>
+        <button
+          className="input__button input__button--back"
+          onClick={props.handleBack}
+        >
           Back
         </button>
         <button
-          className="input__button"
+          className="input__button input__button--next"
           role="button"
           onClick={props.handleSubmit}
         >

@@ -49,11 +49,16 @@ a:hover {
   margin: 3rem;
   outline: none;
   border-style: none; }
+  .input__button--back {
+    margin-bottom: 0rem; }
 
 @media only screen and (max-width: 600px) {
   .input__button {
     font-size: 2rem;
-    width: 10rem; } }
+    width: 60%;
+    height: 4rem; }
+    .input__button--back {
+      margin-bottom: 0rem; } }
 
 .progress {
   width: 100%;
