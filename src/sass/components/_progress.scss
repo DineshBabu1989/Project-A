@@ -16,4 +16,20 @@
     background-color: $color-primary-light;
     border-radius: 1rem;
   }
+  &__value {
+    width: 5rem;
+    height: 5rem;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 50px;
+    background-color: $color-white;
+    margin: 0 auto 1rem auto;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .progress {
+    &__indicator {
+      height: 20px;
+    }
+  }
 }

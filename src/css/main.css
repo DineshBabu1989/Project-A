@@ -75,6 +75,18 @@ a:hover {
     height: 30px;
     background-color: #0366d6;
     border-radius: 1rem; }
+  .progress__value {
+    width: 5rem;
+    height: 5rem;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 50px;
+    background-color: #fff;
+    margin: 0 auto 1rem auto; }
+
+@media only screen and (max-width: 600px) {
+  .progress__indicator {
+    height: 20px; } }
 
 .input {
   padding: 0% 10%;
