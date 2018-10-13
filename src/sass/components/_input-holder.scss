@@ -75,3 +75,33 @@ input[type="radio"] {
     border: 4px solid $color-primary-light;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .input {
+    &__title {
+      font-size: 3rem;
+      padding: 5%;
+    }
+
+    &__field--list {
+      list-style: none;
+      font-size: 2rem;
+    }
+    &__field-radio--holder {
+      position: relative;
+      text-align: center;
+      width: 10%;
+    }
+    &__field--label {
+      margin: 0;
+    }
+  }
+  .radio {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0.7rem;
+    left: 0rem;
+    margin-left: -3rem;
+  }
+}

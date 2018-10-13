@@ -1,17 +1,5 @@
 /***********************Button style**********************/
-.search-bar {
-  & button {
-    display: block;
-    width: 10rem;
-    height: 3rem;
-    border-radius: 0.5rem;
-    margin: 0 auto;
-    background-color: $color-primary-light;
-    color: $color-white;
-    border: none;
-    @include vp-box-shadow(2px 2px 7px -1px rgba(0, 0, 0, 0.75));
-  }
-}
+
 .input__button {
   width: 15rem;
   height: 5rem;
@@ -23,4 +11,13 @@
   margin: 3rem;
   outline: none;
   border-style: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .input {
+    &__button {
+      font-size: 2rem;
+      width: 10rem;
+    }
+  }
 }

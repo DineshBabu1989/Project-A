@@ -25,3 +25,17 @@
     color: $color-primary-light;
   }
 }
+@media only screen and (max-width: 600px) {
+  .summary {
+    &__heading {
+      font-size: 3rem;
+      padding: 5%;
+    }
+    &__list-item--ques {
+      font-size: 2rem;
+    }
+    &__list-item--ans {
+      font-size: 2rem;
+    }
+  }
+}
