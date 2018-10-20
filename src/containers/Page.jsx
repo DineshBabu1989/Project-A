@@ -15,6 +15,15 @@ import ProgressBar from "../components/progress";
 import Summary from "../components/summaryPage";
 
 class Page extends Component {
+  componentDidMount() {
+    /*browser back button*/
+    window.onpopstate = this.handlePopState;
+  }
+
+  componentWillUnmount() {
+    window.onpopstate = null;
+  }
+
   handleChange = data => {
     this.props.current_page(data);
   };
@@ -41,6 +50,12 @@ class Page extends Component {
     console.log(this.props.pages);
   };
 
+  /*browser back button*/
+  handlePopState = event => {
+    event.preventDefault();
+    this.props.dec_progress();
+  };
+
   render() {
     let pages = this.props.pages;
     let progress = this.props.progress;
@@ -57,13 +72,13 @@ class Page extends Component {
           return page;
         }
       });
-      console.log(pagedata);
+      //console.log(pagedata);
       /*Finding index to identify the first page*/
       const pageIndex = pages.findIndex(page => {
         return page.id == this.props.match.params.progress;
       });
 
-      /*Selective rendering of a page component*/
+      /*Selective rendering of a page component based on type*/
       if (pagedata.type === "textField") {
         page = (
           <TextField
@@ -122,11 +137,13 @@ class Page extends Component {
     );
   }
 }
+
 const mapStateToProps = state => ({
   pages: state.allpages,
   progress: state.progress,
   currentPage: state.currentPage
 });
+
 export default connect(
   mapStateToProps,
   {

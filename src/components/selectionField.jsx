@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
+import ButtonGroup from "./buttonGroup";
 
 const SelectionField = props => {
+  /*Data change handling*/
   const handleChange = e => {
     let data = {
       id: props.data.id,
@@ -28,39 +30,6 @@ const SelectionField = props => {
     });
   };
 
-  let buttons;
-  if (props.pageIndex !== 0) {
-    buttons = (
-      <div>
-        <button
-          className="input__button input__button--back"
-          onClick={props.handleBack}
-        >
-          Back
-        </button>
-        <button
-          className="input__button input__button--next"
-          disabled={props.disabled}
-          onClick={handleNext}
-        >
-          Next
-        </button>
-      </div>
-    );
-  } else {
-    buttons = (
-      <div>
-        <button
-          className="input__button input__button--next"
-          disabled={props.disabled}
-          onClick={handleNext}
-        >
-          Next
-        </button>
-      </div>
-    );
-  }
-
   return (
     <Fragment>
       <section className="input">
@@ -74,7 +43,12 @@ const SelectionField = props => {
             <option defaultValue=" ">Choose an occupation</option>
             {selectOptions()}
           </select>
-          {buttons}
+          <ButtonGroup
+            pageIndex={props.pageIndex}
+            handleBack={props.handleBack}
+            disabled={props.disabled}
+            handleNext={handleNext}
+          />
         </div>
       </section>
     </Fragment>

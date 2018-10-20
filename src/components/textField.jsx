@@ -1,12 +1,8 @@
-/*
-1.render a text field
-2.it should have 2 buttons 
-3.it should accept props {handleChange,handleNext,handleBack,disabled, data, nextParamsId, pageIndex }
-4.it should have the ability to hide the back button if the current params is "1"
-*/
 import React, { Fragment } from "react";
+import ButtonGroup from "./buttonGroup";
 
 const TextField = props => {
+  /*Data change handling*/
   const handleChange = e => {
     let data = {
       id: props.data.id,
@@ -22,38 +18,6 @@ const TextField = props => {
       props.handleNext("summary");
     }
   };
-  let buttons;
-  if (props.pageIndex !== 0) {
-    buttons = (
-      <div>
-        <button
-          className="input__button input__button--back"
-          onClick={props.handleBack}
-        >
-          Back
-        </button>
-        <button
-          className="input__button input__button--next"
-          disabled={props.disabled}
-          onClick={handleNext}
-        >
-          Next
-        </button>
-      </div>
-    );
-  } else {
-    buttons = (
-      <div>
-        <button
-          className="input__button input__button--next"
-          disabled={props.disabled}
-          onClick={handleNext}
-        >
-          Next
-        </button>
-      </div>
-    );
-  }
 
   return (
     <Fragment>
@@ -66,7 +30,12 @@ const TextField = props => {
             onChange={handleChange}
             value={props.term}
           />
-          {buttons}
+          <ButtonGroup
+            pageIndex={props.pageIndex}
+            handleBack={props.handleBack}
+            disabled={props.disabled}
+            handleNext={handleNext}
+          />
         </div>
       </section>
     </Fragment>

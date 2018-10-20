@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
+import ButtonGroup from "./buttonGroup";
 
 const radioField = props => {
-  console.log(props);
+  /*Data change handling*/
   const handleChange = e => {
     let data = {
       id: props.data.id,
@@ -21,9 +22,9 @@ const radioField = props => {
 
   const renderCheckbutton = option => {
     if (props.term === option) {
-      return <div class="radio radio__checked" />;
+      return <div className="radio radio__checked" />;
     } else {
-      return <div class="radio radio__unchecked" />;
+      return <div className="radio radio__unchecked" />;
     }
   };
 
@@ -33,7 +34,7 @@ const radioField = props => {
         <li key={i} className="input__field--list">
           <div className="input__field-radio--holder">
             {renderCheckbutton(option)}
-            <label for={option} className="input__field--label">
+            <label htmlFor={option} className="input__field--label">
               <input
                 type="radio"
                 id={option}
@@ -50,46 +51,18 @@ const radioField = props => {
     });
   };
 
-  let buttons;
-  if (props.pageIndex !== 0) {
-    buttons = (
-      <div>
-        <button
-          className="input__button input__button--back"
-          onClick={props.handleBack}
-        >
-          Back
-        </button>
-        <button
-          className="input__button input__button--next"
-          disabled={props.disabled}
-          onClick={handleNext}
-        >
-          Next
-        </button>
-      </div>
-    );
-  } else {
-    buttons = (
-      <div>
-        <button
-          className="input__button input__button--next"
-          disabled={props.disabled}
-          onClick={handleNext}
-        >
-          Next
-        </button>
-      </div>
-    );
-  }
-
   return (
     <Fragment>
       <section className="input">
         <div className="input__holder">
           <h1 className="input__title">{props.data.question}</h1>
           <ul className="input__radio">{makeList()}</ul>
-          {buttons}
+          <ButtonGroup
+            pageIndex={props.pageIndex}
+            handleBack={props.handleBack}
+            disabled={props.disabled}
+            handleNext={handleNext}
+          />
         </div>
       </section>
     </Fragment>

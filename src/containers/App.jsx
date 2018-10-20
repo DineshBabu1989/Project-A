@@ -6,7 +6,6 @@ import Page from "./Page";
 
 class App extends Component {
   /*Get pages on app load*/
-
   componentDidMount() {
     this.props.all_pages();
     this.props.initial_render();
@@ -24,9 +23,11 @@ class App extends Component {
     );
   }
 }
+
 const mapStateToProps = state => ({
   pages: state.allpages
 });
+
 export default connect(
   mapStateToProps,
   {

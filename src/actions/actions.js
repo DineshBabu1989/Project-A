@@ -5,7 +5,12 @@ export const DEC_PROGESS = "DEC_PROGESS";
 export const CURRENT_PAGE = "CURRENT_PAGE";
 export const UPDATE_PAGE = "UPDATE_PAGE";
 
-/*Page details*/
+/*PAGE DETAILS CAN BE MODIFIED TO INCLUDE MORE PAGES ON THE DYNAMCIC SURVEY 
+There are 3 types of inputs
+1.textField - generates a text field input
+2.selectOption - generates a drop down selector
+3.radioButton - generates a radio group
+*/
 export const all_pages = () => {
   const data = [
     {
