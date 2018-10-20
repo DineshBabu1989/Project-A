@@ -9,7 +9,6 @@ const Progress = (state = 1, action) => {
         return state - 1;
       }
     }
-
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
   inc_progress,
@@ -11,8 +11,9 @@ import {
 import TextField from "../components/textField";
 import SelectionField from "../components/selectionField";
 import RadioField from "../components/radioField";
-import ProgressBar from "../components/progress";
+import ProgressBar from "../components/progressBar";
 import Summary from "../components/summaryPage";
+import Spinner from "../components/spinner";
 
 class Page extends Component {
   componentDidMount() {
@@ -60,11 +61,15 @@ class Page extends Component {
     let pages = this.props.pages;
     let progress = this.props.progress;
     let currentPage = this.props.currentPage;
-    let page;
+    let page, progressbar;
 
     /*Decide on page rendering*/
     if (pages.length === 0) {
-      page = <div>Loading...</div>;
+      page = (
+        <div className="spinner-holder">
+          <Spinner />
+        </div>
+      );
     } else if (pages.length > 0 && progress <= pages.length + 1) {
       /*Select current page from pages array*/
       const pagedata = pages.find(page => {
@@ -129,9 +134,15 @@ class Page extends Component {
         );
       }
     }
+
+    /*Render progressbar when data arrives*/
+    pages.length > 0
+      ? (progressbar = <ProgressBar count={progress} length={pages.length} />)
+      : (progressbar = <div />);
+
     return (
       <div>
-        <ProgressBar count={progress} length={pages.length} />
+        {progressbar}
         {page}
       </div>
     );

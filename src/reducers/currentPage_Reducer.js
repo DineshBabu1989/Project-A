@@ -7,7 +7,6 @@ const CurrentPage = (state = [], action) => {
       return {
         disabled: true
       };
-
     case CURRENT_PAGE:
       return {
         id: action.payload.id,
@@ -15,7 +14,6 @@ const CurrentPage = (state = [], action) => {
         answer: action.payload.answer,
         disabled: !action.payload.answer
       };
-
     default:
       return state;
   }

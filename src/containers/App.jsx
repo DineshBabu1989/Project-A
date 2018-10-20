@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { all_pages, initial_render } from "../actions/actions";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Redirect, BrowserRouter, Route, Switch } from "react-router-dom";
 import Page from "./Page";
 
 class App extends Component {
@@ -17,6 +17,7 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path="/page/:progress" component={Page} />
+            <Redirect from="/" to="/page/1" />
           </Switch>
         </div>
       </BrowserRouter>

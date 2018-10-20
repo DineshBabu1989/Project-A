@@ -13,7 +13,6 @@ const AllPages = (state = [], action) => {
       });
       return newPages;
     }
-
     default:
       return state;
   }

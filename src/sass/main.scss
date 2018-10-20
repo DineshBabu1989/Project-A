@@ -7,11 +7,10 @@
 @import "base/typography";
 @import "base/utilities";
 
-@import "layout/navigation";
-
 @import "components/button.scss";
 @import "components/progress.scss";
 @import "components/input-holder.scss";
 @import "components/summary.scss";
+@import "components/spinner.scss";
 
-@import "pages/home";
+@import "pages/home.scss";

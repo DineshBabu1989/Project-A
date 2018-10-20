@@ -11,6 +11,7 @@ There are 3 types of inputs
 2.selectOption - generates a drop down selector
 3.radioButton - generates a radio group
 */
+
 export const all_pages = () => {
   const data = [
     {
