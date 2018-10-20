@@ -9,16 +9,16 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
-    "redux": "^4.0.0",
-    "serve": "^10.0.2"
+    "redux": "^4.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "build-css": "node-sass-chokidar src/sass -o src/css",
     "watch-css": "npm run build-css && node-sass-chokidar src/sass -o src/css --watch --recursive",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
     "node-sass-chokidar": "^1.3.3",
