@@ -18,6 +18,7 @@ On terminal instance -1
 
 ```
 npm install
+npm run build
 npm start
 ```
 
@@ -36,6 +37,7 @@ On terminal instance -1
 
 ```
 npm install
+npm run build
 npm start
 ```
 
