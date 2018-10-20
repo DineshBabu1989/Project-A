@@ -30,7 +30,6 @@ class Page extends Component {
   };
 
   handleBack = () => {
-    this.props.dec_progress();
     this.props.history.goBack();
   };
 
