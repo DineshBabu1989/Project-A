@@ -28,6 +28,7 @@ const radioField = props => {
     }
   };
 
+  /*Render radio buttons*/
   const makeList = () => {
     return props.data.options.map((option, i) => {
       return (

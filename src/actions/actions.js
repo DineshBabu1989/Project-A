@@ -5,7 +5,7 @@ export const DEC_PROGESS = "DEC_PROGESS";
 export const CURRENT_PAGE = "CURRENT_PAGE";
 export const UPDATE_PAGE = "UPDATE_PAGE";
 
-/*PAGE DETAILS CAN BE MODIFIED TO INCLUDE MORE PAGES ON THE DYNAMCIC SURVEY 
+/*PAGE DETAILS CAN BE MODIFIED TO INCLUDE MORE PAGES ON THE DYNAMIC SURVEY 
 There are 3 types of inputs
 1.textField - generates a text field input
 2.selectOption - generates a drop down selector

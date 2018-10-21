@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 
 const Summary = props => {
+
+  /*Render list of questions & answers*/
   const list = props.data.map(item => {
     if (item.type !== "submitPage")
       return (

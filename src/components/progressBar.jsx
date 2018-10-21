@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 
 const ProgressBar = props => {
+  /*CSS- width based on progress*/
   const styles = {
     progress: {
       width: `${parseInt((props.count / props.length) * 100)}%`
